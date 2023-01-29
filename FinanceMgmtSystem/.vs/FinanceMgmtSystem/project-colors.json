@@ -5,7 +5,17 @@
       "ProjectGuid": "c6d3c087-d8e6-4caa-b7cf-92489444b38f",
       "DisplayName": "FinanceMgmtSystem",
       "ColorIndex": 0
+    },
+    "ef742849-1edd-46cc-9594-de0d64799989": {
+      "ProjectGuid": "ef742849-1edd-46cc-9594-de0d64799989",
+      "DisplayName": "FinanceMgmtAPIService",
+      "ColorIndex": 1
+    },
+    "bdbd5076-9259-472d-a7ca-36f3e0536036": {
+      "ProjectGuid": "bdbd5076-9259-472d-a7ca-36f3e0536036",
+      "DisplayName": "FinanceMgmtReporsitory",
+      "ColorIndex": 2
     }
   },
-  "NextColorIndex": 1
+  "NextColorIndex": 3
 }
