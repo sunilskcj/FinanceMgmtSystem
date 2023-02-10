@@ -29,5 +29,7 @@ public partial class UserDetail
 
     public int OrderId { get; set; }
 
+    public string? Status { get; set; }
+
     public virtual ICollection<OrderDetail> OrderDetails { get; } = new List<OrderDetail>();
 }

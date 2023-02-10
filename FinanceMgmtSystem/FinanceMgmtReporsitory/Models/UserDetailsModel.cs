@@ -32,6 +32,7 @@ namespace FinanceMgmtReporsitory.Models
 
         public int OrderId { get; set; }
 
+        public string? Status { get; set; }
         public virtual ICollection<OrderDetailsModel> OrderDetails { get; } = new List<OrderDetailsModel>();
     }
 }

@@ -30,12 +30,6 @@ namespace FinanceMgmtAPIService.Controllers
             }) ;
         }
 
-        [HttpGet]
-        [Route("{UserID}")]
-        public IActionResult UserDetailbyID(string UserID)
-        {
-            UserDetail userDetail = LoginDao.GetbyUserId(UserID);
-            return this.Ok(userDetail);
-        }
+       
     }
 }

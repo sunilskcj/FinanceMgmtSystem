@@ -33,11 +33,7 @@ namespace FinanceMgmtReporsitory.DataAccessLayer
             }
         }
 
-        public UserDetail GetbyUserId(string userDetails)
-        {
-            return db.UserDetails.Where(u => u.UserName == userDetails).First();
-        }
-
+       
 
     }
 }

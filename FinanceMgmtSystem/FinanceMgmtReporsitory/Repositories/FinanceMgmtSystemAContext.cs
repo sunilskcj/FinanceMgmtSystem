@@ -151,6 +151,9 @@ public partial class FinanceMgmtSystemAContext : DbContext
                 .IsUnicode(false)
                 .HasColumnName("password");
             entity.Property(e => e.PhoneNumber).HasColumnType("numeric(13, 0)");
+            entity.Property(e => e.Status)
+                .HasMaxLength(30)
+                .IsUnicode(false);
         });
 
         OnModelCreatingPartial(modelBuilder);

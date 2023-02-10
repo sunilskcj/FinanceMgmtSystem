@@ -11,3 +11,4 @@ C:\Users\sunil\Desktop\work\for_u\MyWork\FinanceMgmtSystem\FinanceMgmtSystem\Fin
 C:\Users\sunil\Desktop\work\for_u\MyWork\FinanceMgmtSystem\FinanceMgmtSystem\FinanceMgmtSystem\FinanceMgmtReporsitory\obj\Debug\net6.0\ref\FinanceMgmtReporsitory.dll
 C:\Users\sunil\Desktop\work\for_u\MyWork\FinanceMgmtSystem\FinanceMgmtSystem\FinanceMgmtSystem\FinanceMgmtReporsitory\obj\Debug\net6.0\FinanceMgmtReporsitory.pdb
 C:\Users\sunil\Desktop\work\for_u\MyWork\FinanceMgmtSystem\FinanceMgmtSystem\FinanceMgmtSystem\FinanceMgmtReporsitory\obj\Debug\net6.0\FinanceMgmtReporsitory.genruntimeconfig.cache
+C:\Users\sunil\Desktop\work\for_u\MyWork\FinanceMgmtSystem\FinanceMgmtSystem\FinanceMgmtSystem\FinanceMgmtReporsitory\obj\Debug\net6.0\FinanceMgmtReporsitory.csproj.AssemblyReference.cache

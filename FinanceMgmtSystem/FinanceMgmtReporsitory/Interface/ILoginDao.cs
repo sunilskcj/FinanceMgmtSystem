@@ -7,6 +7,6 @@ namespace FinanceMgmtReporsitory.Interface
     {
         bool IsAuthenticatedUser(LoginModel loginModel);
 
-        UserDetail GetbyUserId(string Details);
+       
     }
 }
