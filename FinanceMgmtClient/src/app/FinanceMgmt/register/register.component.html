@@ -1,0 +1,138 @@
+<div class="container">
+    <h1 class="h7 mb-5">Create Account</h1>
+    <div class="accordion-body">
+        <form [formGroup]="Accountinfo" >
+    
+            <div class="form-group">
+                <label for="title">Title:</label>
+                <select id="title" name="title" formControlName="title">
+                    <option value="Mr.">Mr.</option>
+                    <option value="Ms.">Ms.</option>
+                    <option value="Mrs.">Mrs.</option>
+                  </select>
+            </div>
+            <br>
+        <div class="form-group">
+          <div class="row">
+           <div class="col-lg-3">    
+             <div class="mb-3">
+                 <label class="form-label">Name</label>
+                 <input type="text" class="form-control" id="Name" formControlName="Name">
+             </div>
+              <div [hidden]="Accountinfo.controls['firstName'].valid || Accountinfo.controls['Name'].pristine"
+                  class="alert-danger">
+                  <div *ngIf="Accountinfo.controls['Name'].errors?.['required']">
+                    Name is required
+                  </div>
+               </div>
+           </div>
+           <div class="col-lg-3"> 
+             <div class="mb-3">
+                 <label class="form-label">User Name</label>
+                 <input type="text" class="form-control" placeholder="" formControlName="User Name">
+             </div>
+           </div>
+          
+          </div>
+         </div>
+         <div class="form-group">
+         <div class="row">
+           <div class="col-lg-3">
+               <div class="mb-3">
+                 <label class="form-label">Date of Birth</label>
+                 <input type="date" class="form-control" placeholder=""  formControlName="dob">
+              </div>
+           </div>
+           <div class="col-lg-3">
+             <div class="mb-3">
+                 <label class="form-label">Phone Number</label>
+                 <input type="number" class="form-control" formControlName="phoneno">
+             </div>
+             <div [hidden]="Accountinfo.controls['phoneno'].valid || Accountinfo.controls['phoneno'].pristine"
+                class="alert-danger">
+                <div *ngIf="Accountinfo.controls['phoneno'].errors?.['required']">
+                    Phone Number is required!!!
+                 </div>
+                <div *ngIf="Accountinfo.controls['phoneno'].errors?.['pattern']">
+                   Please, Enter 10 digit Mobile Number.
+                </div>  
+              </div>
+            </div>
+          <div class="col-lg-3">
+            <div class="mb-3">
+                <label class="form-label">EmailID</label>
+                <input type="email" class="form-control" formControlName="emailId">
+            </div>
+            <div [hidden]="Accountinfo.controls['emailId'].valid || Accountinfo.controls['emailId'].pristine"
+               class="alert-danger">
+              <div *ngIf="Accountinfo.controls['emailId'].errors?.['required']">
+                EmailID is required!!!
+               </div>
+              <div *ngIf="Accountinfo.controls['emailId'].errors?.['email']">
+                  Must be an email id
+              </div>
+             </div>
+         </div>
+           </div>
+         </div>
+         <p>ResidentialAddress</p>
+         <div class="form-group">
+         <div class="row">
+            <div class="col-lg-5">
+                <div class="mb-3">
+                    <label class="form-label">AddressLine</label>
+                    <input type="text" class="form-control" formControlName="residentialAddressLine"><br>
+                </div>
+            </div>
+         </div>
+         </div>
+         <div class="form-group">
+         <div class="row">
+            <div class="col-lg-5">
+                <div class="mb-3">
+                    <label class="form-label">Landmark</label>
+                    <input type="text" class="form-control" formControlName="residentialLandmark">
+                </div>
+            </div>
+            <div class="col-lg-5">
+                <div class="mb-3">
+                    <label class="form-label">City</label>
+                    <input type="text" class="form-control" formControlName="residentialCity"><br>
+                </div>
+                <div [hidden]="Accountinfo.controls['residentialCity'].valid || Accountinfo.controls['residentialCity'].pristine"
+                  class="alert-danger">
+                 <div *ngIf="Accountinfo.controls['residentialCity'].errors?.['required']">
+                   Residential City is required!!!
+                  </div>
+                </div>
+            </div>
+         </div>
+         </div>
+         <div class="form-group">
+         <div class="row">
+            <div class="col-lg-5">
+                <div class="mb-3">
+                    <label class="form-label">State</label>
+                    <input type="text" class="form-control" formControlName="residentialState">
+                </div>
+                <div [hidden]="Accountinfo.controls['residentialState'].valid || Accountinfo.controls['residentialState'].pristine"
+                  class="alert-danger">
+                  <div *ngIf="Accountinfo.controls['residentialState'].errors?.['required']">
+                    Residential State is required!!!
+                  </div>
+               </div>
+            </div>
+            <div class="col-lg-5">
+                <div class="mb-3">
+                    <label class="form-label">Pincode</label>
+                    <input type="number" class="form-control" formControlName="residentialPincode"><br>
+                </div>
+                <div [hidden]="Accountinfo.controls['residentialPincode'].valid || Accountinfo.controls['residentialPincode'].pristine"
+                  class="alert-danger">
+                   <div *ngIf="Accountinfo.controls['residentialPincode'].errors?.['required']">
+                     Residential Pincode is required!!!
+                    </div>
+               </div>
+            </div>
+         </div>
+         </div>

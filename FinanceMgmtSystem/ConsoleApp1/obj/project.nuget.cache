@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "izlWXe6pf5bRATZ43hIW6D9D9a40jPppgqLfjJBuXx5MZCRmO+WJYgkN9+2cU12t/G32MzPu7rVCQZpW1vf9xg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\sunil\\Desktop\\work\\for_u\\MyWork\\FinanceMgmtSystem\\FinanceMgmtSystem\\FinanceMgmtSystem\\ConsoleApp1\\ConsoleApp1.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\sunil\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\6.0.15\\microsoft.netcore.app.host.win-x64.6.0.15.nupkg.sha512",
+    "C:\\Users\\sunil\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.15\\microsoft.aspnetcore.app.ref.6.0.15.nupkg.sha512",
+    "C:\\Users\\sunil\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.15\\microsoft.netcore.app.ref.6.0.15.nupkg.sha512"
+  ],
+  "logs": []
+}

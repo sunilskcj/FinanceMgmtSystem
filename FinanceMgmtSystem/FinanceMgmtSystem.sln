@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.32126.317
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinanceMgmtAPIService", "FinanceMgmtAPIService\FinanceMgmtAPIService.csproj", "{EF742849-1EDD-46CC-9594-DE0D64799989}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FinanceMgmtAPIService", "FinanceMgmtAPIService\FinanceMgmtAPIService.csproj", "{EF742849-1EDD-46CC-9594-DE0D64799989}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinanceMgmtReporsitory", "FinanceMgmtReporsitory\FinanceMgmtReporsitory.csproj", "{BDBD5076-9259-472D-A7CA-36F3E0536036}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FinanceMgmtReporsitory", "FinanceMgmtReporsitory\FinanceMgmtReporsitory.csproj", "{BDBD5076-9259-472D-A7CA-36F3E0536036}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp1", "ConsoleApp1\ConsoleApp1.csproj", "{B1E65F3E-1E6B-4BA9-8226-27F13461A389}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{BDBD5076-9259-472D-A7CA-36F3E0536036}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BDBD5076-9259-472D-A7CA-36F3E0536036}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BDBD5076-9259-472D-A7CA-36F3E0536036}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B1E65F3E-1E6B-4BA9-8226-27F13461A389}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1E65F3E-1E6B-4BA9-8226-27F13461A389}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1E65F3E-1E6B-4BA9-8226-27F13461A389}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B1E65F3E-1E6B-4BA9-8226-27F13461A389}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

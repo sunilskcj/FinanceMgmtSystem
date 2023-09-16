@@ -21,7 +21,7 @@ namespace FinanceMgmtReporsitory.DataAccessLayer
             return db.UserDetails.Where(u => u.UserName == userDetails).First();
         }
 
-        public List<UserDetail> GetAllUser(string status)
+        public List<UserDetail> GetAllUserByStatus(string status)
         {
             return db.UserDetails.Where(u => u.Status == status).ToList();
         }
