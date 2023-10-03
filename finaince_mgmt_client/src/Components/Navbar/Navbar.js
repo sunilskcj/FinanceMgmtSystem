@@ -1,7 +1,10 @@
 import { Link } from 'react-router-dom';
 import './Navbar.css';
 
+this.state = {isActive:false};
+toggle=()=>{this.setState(prevState => ({ isActive: !prevState.isActive }))}
 function Navbar(){
+  const {isActive}=this.state;
     return(
         <nav class="navbar navbar-expand-lg ">
   <div class="container-fluid">
@@ -14,17 +17,17 @@ function Navbar(){
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">   
         <li class="nav-item">
-          <Link to='/'><a class="nav-link active"  >Home</a></Link>
+          <Link className={`box ${isActive ? "nav-link" : "nav-link active"}`} to='/' style={{textDecoration:'none'}}><a class="nav-link active" onClick={this.toggle} >Home</a></Link>
         </li>
         <li class="nav-item">
-        <Link to='/createUser'><a class="nav-link" >Create Account</a></Link>
+        <Link to='/createUser' style={{textDecoration:'none',whiteSpace:'nowrap'}}><a class="nav-link" >Create Account</a></Link>
         </li>
         <li class="nav-item">
-        <Link to='/login '><a class="nav-link" >Login</a></Link>
+        <Link to='/login' style={{textDecoration:'none'}}><a class="nav-link" >Login</a></Link>
         </li>
         
         <li class="nav-item">
-        <Link to='/about'><a class="nav-link" >Register</a></Link>
+        <Link to='/about' style={{textDecoration:'none'}}><a class="nav-link" >Register</a></Link>
         </li>
         
       </ul> 
