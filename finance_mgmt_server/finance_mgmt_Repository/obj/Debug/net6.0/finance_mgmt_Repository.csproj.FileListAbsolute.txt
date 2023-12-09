@@ -1,0 +1,14 @@
+C:\Users\sunil\Desktop\work\for_u\MyWork\FinanceMgmtSystem\FinanceMgmtSystem\finance_mgmt_server\finance_mgmt_Repository\bin\Debug\net6.0\finance_mgmt_Repository.deps.json
+C:\Users\sunil\Desktop\work\for_u\MyWork\FinanceMgmtSystem\FinanceMgmtSystem\finance_mgmt_server\finance_mgmt_Repository\bin\Debug\net6.0\finance_mgmt_Repository.runtimeconfig.json
+C:\Users\sunil\Desktop\work\for_u\MyWork\FinanceMgmtSystem\FinanceMgmtSystem\finance_mgmt_server\finance_mgmt_Repository\bin\Debug\net6.0\finance_mgmt_Repository.dll
+C:\Users\sunil\Desktop\work\for_u\MyWork\FinanceMgmtSystem\FinanceMgmtSystem\finance_mgmt_server\finance_mgmt_Repository\bin\Debug\net6.0\ref\finance_mgmt_Repository.dll
+C:\Users\sunil\Desktop\work\for_u\MyWork\FinanceMgmtSystem\FinanceMgmtSystem\finance_mgmt_server\finance_mgmt_Repository\bin\Debug\net6.0\finance_mgmt_Repository.pdb
+C:\Users\sunil\Desktop\work\for_u\MyWork\FinanceMgmtSystem\FinanceMgmtSystem\finance_mgmt_server\finance_mgmt_Repository\obj\Debug\net6.0\finance_mgmt_Repository.csproj.AssemblyReference.cache
+C:\Users\sunil\Desktop\work\for_u\MyWork\FinanceMgmtSystem\FinanceMgmtSystem\finance_mgmt_server\finance_mgmt_Repository\obj\Debug\net6.0\finance_mgmt_Repository.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\sunil\Desktop\work\for_u\MyWork\FinanceMgmtSystem\FinanceMgmtSystem\finance_mgmt_server\finance_mgmt_Repository\obj\Debug\net6.0\finance_mgmt_Repository.AssemblyInfoInputs.cache
+C:\Users\sunil\Desktop\work\for_u\MyWork\FinanceMgmtSystem\FinanceMgmtSystem\finance_mgmt_server\finance_mgmt_Repository\obj\Debug\net6.0\finance_mgmt_Repository.AssemblyInfo.cs
+C:\Users\sunil\Desktop\work\for_u\MyWork\FinanceMgmtSystem\FinanceMgmtSystem\finance_mgmt_server\finance_mgmt_Repository\obj\Debug\net6.0\finance_mgmt_Repository.csproj.CoreCompileInputs.cache
+C:\Users\sunil\Desktop\work\for_u\MyWork\FinanceMgmtSystem\FinanceMgmtSystem\finance_mgmt_server\finance_mgmt_Repository\obj\Debug\net6.0\finance_mgmt_Repository.dll
+C:\Users\sunil\Desktop\work\for_u\MyWork\FinanceMgmtSystem\FinanceMgmtSystem\finance_mgmt_server\finance_mgmt_Repository\obj\Debug\net6.0\ref\finance_mgmt_Repository.dll
+C:\Users\sunil\Desktop\work\for_u\MyWork\FinanceMgmtSystem\FinanceMgmtSystem\finance_mgmt_server\finance_mgmt_Repository\obj\Debug\net6.0\finance_mgmt_Repository.pdb
+C:\Users\sunil\Desktop\work\for_u\MyWork\FinanceMgmtSystem\FinanceMgmtSystem\finance_mgmt_server\finance_mgmt_Repository\obj\Debug\net6.0\finance_mgmt_Repository.genruntimeconfig.cache

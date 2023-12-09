@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "46367acePsz3WKGyF2cmpKAIG5MXHTXQs6GiRpAIels=",
+  "Source": "finance_mgmt_WebAPI",
+  "BasePath": "_content/finance_mgmt_WebAPI",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
