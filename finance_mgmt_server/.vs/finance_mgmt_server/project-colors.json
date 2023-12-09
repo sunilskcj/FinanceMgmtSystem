@@ -1,0 +1,21 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "27f4d8cd-2bad-4235-8590-aa538f6df0b4": {
+      "ProjectGuid": "27f4d8cd-2bad-4235-8590-aa538f6df0b4",
+      "DisplayName": "finance_mgmt_server",
+      "ColorIndex": 0
+    },
+    "e939be07-3727-4e25-bee8-b954d6b23131": {
+      "ProjectGuid": "e939be07-3727-4e25-bee8-b954d6b23131",
+      "DisplayName": "finance_mgmt_WebAPI",
+      "ColorIndex": 1
+    },
+    "0aaeb5e6-6b42-445d-bec7-86550d99dcb3": {
+      "ProjectGuid": "0aaeb5e6-6b42-445d-bec7-86550d99dcb3",
+      "DisplayName": "finance_mgmt_Repository",
+      "ColorIndex": 2
+    }
+  },
+  "NextColorIndex": 3
+}
