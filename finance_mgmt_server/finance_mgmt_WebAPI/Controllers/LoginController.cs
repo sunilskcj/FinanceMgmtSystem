@@ -18,8 +18,16 @@ namespace finance_mgmt_WebAPI.Controllers
         [HttpPost]
         public IActionResult LoginUser(User cred)
         {
-           if(login.isUserExist(cred) > 0) return Ok(new { UserID = cred.UserId });
-           return NotFound() ;
+            try
+            {
+                if (login.isUserExist(cred) > 0) return Ok(new { UserID = cred.UserId });
+                return NotFound();
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+            
         }
     }
 }

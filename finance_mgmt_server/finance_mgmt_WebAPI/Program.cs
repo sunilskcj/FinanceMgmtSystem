@@ -17,6 +17,8 @@ Action<DbContextOptionsBuilder> action = (DbContextOptionsBuilder builder) =>
 builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<FinanceMgmtSystmContext>(action, ServiceLifetime.Scoped);
 builder.Services.AddTransient<ILogin, LoginDao > ();
+builder.Services.AddTransient<IAccounts, AccountsDao>();
+builder.Services.AddTransient<IExpenditure, ExpenditureDao>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
