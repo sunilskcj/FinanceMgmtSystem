@@ -4,7 +4,7 @@ function Home() {
         
         <div className='headHome'>
         
-     
+     dfgs
         </div>
        );
 }

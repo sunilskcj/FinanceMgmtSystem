@@ -6,6 +6,7 @@ import Navbar from './Components/Navbar/Navbar';
 import Home from './Components/Home/Home';
 import Footer from './Components/Footer/Footer';
 import LoginUser from './Components/LoginUser/LoginUser';
+import User from './Components/User/User';
 
 function App() {
   return (
@@ -14,7 +15,7 @@ function App() {
       <Navbar />
       <Routes>
       
-      <Route exact path='/' element={<Home />} ></Route>
+      <Route exact path='/' element={<User />} ></Route>
       <Route path='/createUser' element={<Create_User />} ></Route>
       <Route path='/login' element={<LoginUser />}></Route>
       </Routes>

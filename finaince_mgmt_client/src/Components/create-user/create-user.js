@@ -1,7 +1,7 @@
 import './create-user';
 function Create_User(){
 return (
-<div>
+
 <div class="container">
     <h1 class="h3 mb-5">Create Account</h1>
     <div class="accordion-body">
@@ -226,7 +226,7 @@ return (
     </form>
     </div>
 </div>
-</div>
+
 );
 }
 export default Create_User;
