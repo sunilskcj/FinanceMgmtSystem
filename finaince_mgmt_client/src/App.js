@@ -7,6 +7,7 @@ import Home from './Components/Home/Home';
 import Footer from './Components/Footer/Footer';
 import LoginUser from './Components/LoginUser/LoginUser';
 import User from './Components/User/User';
+import AddExpenses from './Components/User/AddExpenses/AddExpenses';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       <Routes>
       
       <Route exact path='/' element={<User />} ></Route>
+      <Route path='/addExpense' element={<AddExpenses />} ></Route>
       <Route path='/createUser' element={<Create_User />} ></Route>
       <Route path='/login' element={<LoginUser />}></Route>
       </Routes>
