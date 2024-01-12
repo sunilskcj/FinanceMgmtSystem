@@ -48,7 +48,7 @@ namespace finance_mgmt_WebAPI.Controllers
         {
             try
             {
-                if (acc.AddExpenses(newacc) > 0) return Ok(new { UserID = newacc.Id });
+                if (acc.AddExpenses(newacc) > 0) return Ok(new { UserID = newacc.ExpId });
                 return NotFound();
             }
             catch (Exception ex)
@@ -62,7 +62,7 @@ namespace finance_mgmt_WebAPI.Controllers
         {
             try
             {
-                if (acc.UpdateExpenses(newacc) > 0) return Ok(new { UserID = newacc.Id });
+                if (acc.UpdateExpenses(newacc) > 0) return Ok(new { UserID = newacc.ExpId });
                 return NotFound();
             }
             catch (Exception ex)
@@ -76,7 +76,7 @@ namespace finance_mgmt_WebAPI.Controllers
         {
             try
             {
-                if (acc.DeleteExpenses(newacc) > 0) return Ok(new { UserID = newacc.Id });
+                if (acc.DeleteExpenses(newacc) > 0) return Ok(new { UserID = newacc.ExpId });
                 return NotFound();
             }
             catch (Exception ex)

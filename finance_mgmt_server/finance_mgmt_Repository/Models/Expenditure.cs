@@ -17,9 +17,9 @@ public partial class Expenditure
 
     public string? Notes { get; set; }
 
-    public int Id { get; set; }
-
     public int? AccountsId { get; set; }
+
+    public int ExpId { get; set; }
 
     public virtual Account? Accounts { get; set; }
 }

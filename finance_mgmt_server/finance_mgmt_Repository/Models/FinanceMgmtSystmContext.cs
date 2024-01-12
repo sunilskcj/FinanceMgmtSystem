@@ -45,13 +45,11 @@ public partial class FinanceMgmtSystmContext : DbContext
 
         modelBuilder.Entity<Expenditure>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Expendit__3214EC27C2C0B428");
+            entity.HasKey(e => e.ExpId).HasName("PK__Expendit__45B117C73184AE0B");
 
             entity.ToTable("Expenditure");
 
-            entity.Property(e => e.Id)
-                .ValueGeneratedNever()
-                .HasColumnName("ID");
+            entity.Property(e => e.ExpId).HasColumnName("ExpID");
             entity.Property(e => e.AccountsId).HasColumnName("AccountsID");
             entity.Property(e => e.Amount).HasColumnType("decimal(18, 2)");
             entity.Property(e => e.ExpenseDate).HasColumnType("date");

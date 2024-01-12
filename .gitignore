@@ -5,13 +5,4 @@ finaince_mgmt_client/README.md
 finaince_mgmt_client/public/robots.txt
 finaince_mgmt_client/public/manifest.json
 
-finaince_mgmt_client/src/App.js
-finaince_mgmt_client/src/Components/create-user/create-user.js
-finaince_mgmt_client/src/Components/Home/Home.js
-finaince_mgmt_client/src/Components/LoginUser/LoginUser.js
-finaince_mgmt_client/src/Components/Navbar/Navbar.js
-finaince_mgmt_client/src/Components/User/AddExpenses/AddExpenses.css
-finaince_mgmt_client/src/Components/User/AddExpenses/AddExpenses.js
-finaince_mgmt_client/src/Components/User/User.css
-finaince_mgmt_client/src/Components/User/User.js
-finaince_mgmt_client/src/index.css
+

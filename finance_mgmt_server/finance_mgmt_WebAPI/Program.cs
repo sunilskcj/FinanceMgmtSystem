@@ -19,6 +19,8 @@ builder.Services.AddDbContext<FinanceMgmtSystmContext>(action, ServiceLifetime.S
 builder.Services.AddTransient<ILogin, LoginDao > ();
 builder.Services.AddTransient<IAccounts, AccountsDao>();
 builder.Services.AddTransient<IExpenditure, ExpenditureDao>();
+
+builder.Services.AddCors();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -27,9 +29,14 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-
 app.UseAuthorization();
-
+app.UseCors(
+              policyBuilder =>
+              policyBuilder
+              .AllowAnyOrigin()
+              .AllowAnyMethod()
+              .AllowAnyHeader()
+              );
 app.MapControllers();
 
 app.Run();

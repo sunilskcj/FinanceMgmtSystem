@@ -2,10 +2,10 @@ import { useState } from "react";
 import "./User.css"
 import Axios from "axios";
 function User(){
-  const url ="";
+  const url ="http://localhost:5244/api/Expenditure";
   const [data, setData]=useState({
     expenses:"",
-    accountsId:"",
+    
     amount:"",
     notes:"",
     expenseDate:""
@@ -20,12 +20,13 @@ console.log(newDate);
 function Submit(e){
 e.preventDefault();
 Axios.post(url,{
-  accountsId:data.accountsId,
+ 
   expenses:data.expenses,
   amount:data.amount,
   expenseDate:data.expenseDate,
   notes:data.notes
 })
+.then(console.log(data))
 };
     return(
         <addexpense>

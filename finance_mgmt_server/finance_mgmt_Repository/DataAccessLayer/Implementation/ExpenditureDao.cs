@@ -30,7 +30,7 @@ namespace finance_mgmt_Repository.DataAccessLayer.Implementation
         public Expenditure FetchbyId(int id)
         {
             
-                return _db.Expenditures.Where(p => p.Id== id).First<Expenditure>();
+                return _db.Expenditures.Where(p => p.ExpId == id).First<Expenditure>();
                 //return _db
                 //    .Expenditures
                 //    .Where(e => e.Id == id)
