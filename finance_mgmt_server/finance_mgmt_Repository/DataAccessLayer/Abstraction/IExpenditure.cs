@@ -13,6 +13,6 @@ namespace finance_mgmt_Repository.DataAccessLayer.Abstraction
         public Expenditure FetchbyId(int id);
         public int AddExpenses(Expenditure exp);
         public int UpdateExpenses(Expenditure exp);
-        public int DeleteExpenses(Expenditure exp);
+        public int DeleteExpensesbyId(int id);
     }
 }

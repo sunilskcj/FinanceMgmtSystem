@@ -21,9 +21,10 @@ namespace finance_mgmt_Repository.DataAccessLayer.Implementation
             return _db.SaveChanges();
         }
 
-        public int DeleteExpenses(Expenditure exp)
+        public int DeleteExpensesbyId(int id)
         {
-            _db.Expenditures.Remove(exp);
+            var found=_db.Expenditures.Where(p => p.ExpId == id).FirstOrDefault<Expenditure>();
+            if (found != null) _db.Expenditures.Remove(found);
             return _db.SaveChanges();
         }
 

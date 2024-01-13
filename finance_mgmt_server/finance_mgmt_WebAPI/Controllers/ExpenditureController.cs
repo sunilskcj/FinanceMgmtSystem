@@ -72,11 +72,12 @@ namespace finance_mgmt_WebAPI.Controllers
 
         }
         [HttpDelete]
-        public IActionResult DeleteExpenditure(Expenditure newacc)
+        [Route("{id}")]
+        public IActionResult DeleteExpenditure(int id)
         {
             try
             {
-                if (acc.DeleteExpenses(newacc) > 0) return Ok(new { UserID = newacc.ExpId });
+                if (acc.DeleteExpensesbyId(id) > 0) return Ok(new { UserID = id});
                 return NotFound();
             }
             catch (Exception ex)
