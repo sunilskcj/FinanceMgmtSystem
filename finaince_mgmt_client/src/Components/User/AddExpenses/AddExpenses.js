@@ -12,16 +12,17 @@ function AddExpenses(){
       notes:"",
       expenseDate:""
     });  
-  
+
     function handle(e){
   const newDate ={...data};
   newDate[e.target.id]=e.target.value
   setData(newDate);
+  console.log(data);
   }
   function Submit(e){
   e.preventDefault();
   Axios.post(url,{
-    expenseType: 1,
+    expenseType: data.expenseType,
     expenses:data.expenses,
     amount:data.amount,
     expenseDate:data.expenseDate,
@@ -31,12 +32,12 @@ function AddExpenses(){
   };
       return(
           <addexpense>
-          <h1 >Add New Expense</h1>
+          <h1 >Add New</h1>
           <div className="formAdd"><br/>
           <form onSubmit={(e)=>Submit(e)}>
           <div className="form-row">
             <div className="form-group">
-              <label for="expenses">Expense</label>
+              <label for="expenses">Name</label>
               <input onChange={(e)=> handle(e)} value={data.expenses} type="text" className="form-control" id="expenses"  />
             </div>
             <div className="form-group">
@@ -46,6 +47,14 @@ function AddExpenses(){
             <div className="form-group">
             <label for="Amount">Amount</label>
             <input onChange={(e)=> handle(e)} value={data.amount} type="number" className="form-control" id="amount"  />
+          </div>
+          <div className="form-group">
+            <label for="expenseType">Expense Type</label>
+            <select onChange={(e) => handle(e)} id="expenseType" className="form-control">
+            <option value="0">Income</option>
+            <option value="1" >Expense</option>
+            <option selected value="">Null</option>
+            </select>
           </div>
           <div className="form-group">
             <label for="Notes">Notes</label>
