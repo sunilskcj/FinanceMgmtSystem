@@ -7,7 +7,7 @@ function AddExpenses(){
     const url ="http://localhost:5244/api/Expenditure";
     const [data, setData]=useState({
       expenses:"",
-      
+      expenseType:"",
       amount:"",
       notes:"",
       expenseDate:""
@@ -21,7 +21,7 @@ function AddExpenses(){
   function Submit(e){
   e.preventDefault();
   Axios.post(url,{
-   
+    expenseType: 1,
     expenses:data.expenses,
     amount:data.amount,
     expenseDate:data.expenseDate,

@@ -29,6 +29,21 @@ namespace finance_mgmt_WebAPI.Controllers
             }
         }
         [HttpGet]
+        [Route("income")]
+        public IActionResult GetAllIncome()
+        {
+            try
+            {
+                List<Expenditure> allExpenditures = acc.GetAllIncome();
+                if (allExpenditures.Count > 0) return Ok(allExpenditures);
+                return NotFound();
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+        [HttpGet]
         [Route("fetchById/{id}")]
         public IActionResult GetExpenditurebyID(int id)
         {

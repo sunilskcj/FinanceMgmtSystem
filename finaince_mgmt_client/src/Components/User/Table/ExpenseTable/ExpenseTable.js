@@ -19,6 +19,7 @@ function ExpenseTable() {
 
       axios.delete(baseURL+"/"+id).then(console.log(id))
            .then(post.filter((p)=> p.expId !== id) ).then(setPost(post))
+           .then(console.log(id)).then(alert("Deleted Expenses"))
            
     }
       if(post == null) return null;

@@ -42,9 +42,12 @@ namespace finance_mgmt_Repository.DataAccessLayer.Implementation
 
         public List<Expenditure> GetAllExpenses()
         {
-            return _db.Expenditures.ToList<Expenditure>();
+            return _db.Expenditures.Where(e=>e.ExpenseType==1).ToList<Expenditure>();
         }
-
+        public List<Expenditure> GetAllIncome()
+        {
+            return _db.Expenditures.Where(e => e.ExpenseType == 0).ToList<Expenditure>();
+        }
         public int UpdateExpenses(Expenditure exp)
         {
             _db.Expenditures.Update(exp);
