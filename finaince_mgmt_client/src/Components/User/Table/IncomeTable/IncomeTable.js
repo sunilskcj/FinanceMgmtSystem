@@ -31,7 +31,7 @@ function IncomeTable() {
       <thead>
         <tr>
             <th>S.No</th>
-            <th>IncomeTable</th>
+            <th>Income Name</th>
             <th>Amount</th>
             <th>Notes</th>
             <th>Date</th>
@@ -41,10 +41,10 @@ function IncomeTable() {
         {post.map((exp)=><tbody>
         <tr key={exp.expId}>
          <td>{exp.expId}</td>
-         <td>{exp.Incomes}</td>
+         <td>{exp.expenses}</td>
          <td>{exp.amount}</td>
          <td>{exp.notes}</td>
-         <td>{exp.IncomeDate}</td>
+         <td>{exp.expenseDate}</td>
          <td><button type="button" class="btn btn-primary">Edit</button>{nbsp}{nbsp}
          <button type="button" onClick={(e)=>deleteIncome(exp.expId)} class="btn btn-danger">Delete</button></td>
         </tr>
