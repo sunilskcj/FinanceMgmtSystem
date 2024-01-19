@@ -15,13 +15,13 @@ function IncomeTable() {
         });
       }, []);
 
-    function deleteIncome(id){
+      function deleteIncome(id){
 
-      axios.delete(baseURL+"/"+id).then(console.log(id))
-           .then(post.filter((p)=> p.expId !== id) ).then(setPost(post))
-           .then(console.log(id)).then(alert("Deleted Incomes"))
-           
-    }
+        axios.delete("http://localhost:5244/api/Expenditure/"+id).then(console.log(id))
+             .then(post.filter((p)=> p.expId !== id) ).then(setPost(post))
+             .then(console.log(id)).then(alert("Deleted Expenses"))
+             
+      }
       if(post == null) return null;
   return (
     <div> <h2 style={{textAlign:"center"}}>Income Table</h2>
