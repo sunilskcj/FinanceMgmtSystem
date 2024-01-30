@@ -6,7 +6,7 @@ namespace finance_mgmt_Repository.Models;
 public partial class Expenditure
 {
     public string? Expenses { get; set; }
-
+ 
     public decimal? Amount { get; set; }
 
     public int? ExpenseType { get; set; }
