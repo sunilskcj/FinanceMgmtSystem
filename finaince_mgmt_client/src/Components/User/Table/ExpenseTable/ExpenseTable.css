@@ -1,6 +1,10 @@
 expenseTable{
-    display: flex;
-    width: 80vw;
-    margin: auto;
-    
+
+   
+   
+}
+th, td {
+    border:0;}
+table{
+  
 }

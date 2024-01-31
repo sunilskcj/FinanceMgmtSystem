@@ -1,5 +1,6 @@
 import Table from 'react-bootstrap/Table';
 import { useState, useEffect } from "react";
+import moment from 'moment';
 import axios from "axios";
 import "./ExpenseTable.css"
 
@@ -14,7 +15,13 @@ function ExpenseTable() {
           console.log(post)
         });
       }, []);
+      const [open, setOpen] = useState(false);
 
+      const handleOpen = () => {
+        setOpen(!open);
+      };
+  
+     
     function deleteExpense(id){
 
       axios.delete(baseURL+"/"+id).then(console.log(id))
@@ -24,10 +31,14 @@ function ExpenseTable() {
     }
       if(post == null) return null;
   return (
-    <div> <h2 style={{textAlign:"center"}}>Expense Table</h2>
+    <div>
     <expenseTable>
+ 
+   <table class="table-light">
    
-   <Table striped bordered hover variant="dark">
+   <caption>
+   Front-end web developer course 2021
+ </caption>
       <thead>
         <tr>
             <th>S.No</th>
@@ -42,14 +53,26 @@ function ExpenseTable() {
         <tr key={exp.expId}>
          <td>{exp.expId}</td>
          <td>{exp.expenses}</td>
-         <td>{exp.amount}</td>
+         <td>₹<b>{exp.amount}</b></td>
          <td>{exp.notes}</td>
-         <td>{exp.expenseDate}</td>
-         <td><button type="button" class="btn btn-primary">Edit</button>{nbsp}{nbsp}
-         <button type="button" onClick={(e)=>deleteExpense(exp.expId)} class="btn btn-danger">Delete</button></td>
+         <td style={{fontSize:'14px'}}>{moment(exp.expenseDate).format('DD-MMM-YYYY')}</td>
+         <td><svg onClick={(e)=>handleOpen(e)} xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
+         <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0"/>
+       </svg> {open ? (
+        <ul className="menu">
+          <li className="menu-item">
+          <button type="button" >Edit</button>
+          </li>
+          <li className="menu-item">
+          <button type="button" onClick={(e)=>deleteExpense(exp.expId)} >Delete</button>
+          </li>
+        </ul>
+      ) : null}
+     
+         </td>
         </tr>
         </tbody>)}
-    </Table>
+    </table>
     </expenseTable></div>
   )}
 
