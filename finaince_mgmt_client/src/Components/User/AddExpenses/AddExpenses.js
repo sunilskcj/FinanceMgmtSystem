@@ -32,8 +32,8 @@ function AddExpenses(){
   };
       return(
           <addexpense>
-          <h1 >Add New</h1>
-          <div className="formAdd"><br/>
+          <h5 >Add New</h5>
+          <div className="formAdd">
           <form onSubmit={(e)=>Submit(e)}>
           <div className="form-row">
             <div className="form-group">

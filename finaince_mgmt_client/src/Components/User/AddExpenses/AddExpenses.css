@@ -1,10 +1,11 @@
 addexpense{
     border-radius: 15px;
     background: #ffffff;
-    display: table;
-    width: 80vw;
+    display: flexbox;
+    width: 60vw;
     margin: auto;
     padding: 2%;
+    margin-top: 5vh;
 }
 addexpense h1{
     color: #298097;
