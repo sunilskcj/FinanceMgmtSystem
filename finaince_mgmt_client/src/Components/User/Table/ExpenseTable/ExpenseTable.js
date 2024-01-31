@@ -31,14 +31,12 @@ function ExpenseTable() {
     }
       if(post == null) return null;
   return (
-    <div>
-    <expenseTable>
+    <div className='expenseTable'>
+
  
-   <table class="table-light">
+   <table >
    
-   <caption>
-   Front-end web developer course 2021
- </caption>
+
       <thead>
         <tr>
             <th>S.No</th>
@@ -73,7 +71,7 @@ function ExpenseTable() {
         </tr>
         </tbody>)}
     </table>
-    </expenseTable></div>
+   </div>
   )}
 
   export default ExpenseTable;
