@@ -10,20 +10,20 @@ import User from './Components/User/User';
 import AddExpenses from './Components/User/AddExpenses/AddExpenses';
 
 function App() {
+  let nbsp = "\u00A0"
   return (
-    <div className="App">
-      <BrowserRouter>
-      <Navbar />
-      <Routes>
-      
-      <Route exact path='/' element={<User />} ></Route>
-      <Route path='/addExpense' element={<AddExpenses />} ></Route>
-      <Route path='/createUser' element={<Create_User />} ></Route>
-      <Route path='/login' element={<LoginUser />}></Route>
-      </Routes>
-      <Footer />
-      </BrowserRouter>
-    </div>
+  <div className='App'>
+  <BrowserRouter>
+<Navbar />
+<Routes>
+<Route exact path='/view' element={<User />}/>
+<Route path='/add' element={<AddExpenses />}/>
+</Routes>
+</BrowserRouter>
+
+
+  </div>
+    
   );
 }
 
