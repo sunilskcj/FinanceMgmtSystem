@@ -1,10 +1,8 @@
 .incomeTable{
     background-color: #ffffff;
-    display: flex;
     
-    margin: auto;
     margin-top: 5vh;
-    width: 60vw;
+  
     padding:2% ;
     border-radius: 15px;
     filter: drop-shadow(0 0 0.75rem rgb(206, 203, 203));
