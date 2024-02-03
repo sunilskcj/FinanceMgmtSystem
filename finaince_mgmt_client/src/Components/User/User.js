@@ -1,15 +1,24 @@
 import { BrowserRouter, Route,  Routes } from 'react-router-dom';
-import ExpenseTable from './Table/ExpenseTable/ExpenseTable';
-import IncomeTable from './Table/IncomeTable/IncomeTable';
+
+
+import AddExpenses from './AddExpenses/AddExpenses';
 import './User.css';
-import Footer from '../Footer/Footer';
+
+import UserNavbar from './UserNavbar/UserNavbar';
+import Dashboard from './Dashboard/Dashboard';
 function User(){
     return(
-      <user>
-        <ExpenseTable />
-        <IncomeTable />
-        <Footer />
-  </user>
+      <div className='User'>
+      <BrowserRouter>
+<UserNavbar />
+<Routes>
+<Route exact path='/view' element={<Dashboard />}/>
+<Route path='/add' element={<AddExpenses />}/>
+</Routes>
+</BrowserRouter>
+
+      
+  </div>
     )
 }
 
