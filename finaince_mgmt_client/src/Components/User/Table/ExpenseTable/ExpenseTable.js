@@ -71,6 +71,7 @@ function ExpenseTable() {
         </tr>
         </tbody>)}
     </table>
+    
    </div>
   )}
 
