@@ -1,13 +1,13 @@
-addexpense{
+.addexpense{
     border-radius: 15px;
     background: #ffffff;
-    display: flexbox;
+
     width: 60vw;
     margin: auto;
-    padding: 2%;
-    margin-top: 5vh;
+  
+    
 }
-addexpense h1{
+.addexpense h1{
     color: #298097;
 
 font-family: Arial, Helvetica, sans-serif;
