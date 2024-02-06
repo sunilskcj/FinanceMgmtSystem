@@ -31,7 +31,7 @@ function AddExpenses(){
   .then(console.log(data)).then(alert("Added Expenses"))
   };
       return(
-          <addexpense>
+          <div className="addexpense">
           <h5 >Add New</h5>
           <div className="formAdd">
           <form onSubmit={(e)=>Submit(e)}>
@@ -69,7 +69,7 @@ function AddExpenses(){
         <br/>
           <button type="submit" className="btn btn-primary">Add</button>
         </form></div>
-          </addexpense>
+          </div>
       )
 }
 
