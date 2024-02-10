@@ -52,6 +52,9 @@ public partial class FinanceMgmtSystmContext : DbContext
             entity.Property(e => e.ExpId).HasColumnName("ExpID");
             entity.Property(e => e.AccountsId).HasColumnName("AccountsID");
             entity.Property(e => e.Amount).HasColumnType("decimal(18, 2)");
+            entity.Property(e => e.Category)
+                .HasMaxLength(80)
+                .IsUnicode(false);
             entity.Property(e => e.ExpenseDate).HasColumnType("date");
             entity.Property(e => e.Expenses)
                 .HasMaxLength(225)
