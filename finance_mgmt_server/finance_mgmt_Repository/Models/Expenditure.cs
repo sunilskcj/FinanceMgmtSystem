@@ -6,7 +6,7 @@ namespace finance_mgmt_Repository.Models;
 public partial class Expenditure
 {
     public string? Expenses { get; set; }
- 
+
     public decimal? Amount { get; set; }
 
     public int? ExpenseType { get; set; }
@@ -20,6 +20,8 @@ public partial class Expenditure
     public int? AccountsId { get; set; }
 
     public int ExpId { get; set; }
+
+    public string? Category { get; set; }
 
     public virtual Account? Accounts { get; set; }
 }
