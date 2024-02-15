@@ -9,14 +9,14 @@ function LoginUser() {
         <input type="radio" name="radioCalc" id="radioSub"  />&nbsp;Admin<br />
         <div>
           <label for="customerId">User ID </label> &nbsp;
-           <input name="customerId" type="number" class="form" id="customerId" formControlName="customerId"/><br /><br />
+           <input name="customerId" type="number" className="form" id="customerId" formControlName="customerId"/><br /><br />
         </div>
         
         <div>
          <label for="Password">Password </label>&nbsp;
-         <input name="netBankingPassword" type="password" class="password" id="password" formControlName="netBankingPassword" /><br /><br />
+         <input name="netBankingPassword" type="password" className="password" id="password" formControlName="netBankingPassword" /><br /><br />
         </div>
-        <button class="btn btn-primary" type="submit" >Login</button><br /><br />
+        <button className="btn btn-primary" type="submit" >Login</button><br /><br />
     </form>
 
 <div>
