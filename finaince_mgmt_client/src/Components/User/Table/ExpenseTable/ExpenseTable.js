@@ -34,39 +34,28 @@ function ExpenseTable() {
     <div className='expenseTable'>
 
  
-   <table >
+   <table className="table">
    
 
       <thead>
-        <tr>
-            <th>S.No</th>
-            <th>Expense Name</th>
-            <th>Amount</th>
-            <th>Notes</th>
-            <th>Date</th>
-            <th>Edit</th>
+        <tr  >
+            
+            <th scope="col">Expense Name</th>
+            <th scope="col">Amount</th>
+            <th scope="col">Notes</th>
+            <th scope="col">Date</th>
+            <th scope="col">Edit</th>
         </tr>
         </thead>
         {post.map((exp)=><tbody>
         <tr key={exp.expId}>
-         <td>{exp.expId}</td>
-         <td>{exp.expenses}</td>
-         <td>₹<b>{exp.amount}</b></td>
-         <td>{exp.notes}</td>
-         <td style={{fontSize:'14px'}}>{moment(exp.expenseDate).format('DD-MMM-YYYY')}</td>
-         <td><svg onClick={(e)=>handleOpen(e)} xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
-         <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0"/>
-       </svg> {open ? (
-        <ul className="menu">
-          <li className="menu-item">
-          <button type="button" >Edit</button>
-          </li>
-          <li className="menu-item">
-          <button type="button" onClick={(e)=>deleteExpense(exp.expId)} >Delete</button>
-          </li>
-        </ul>
-      ) : null}
-     
+         
+         <td scope="row">{exp.expenses}</td>
+         <td scope="row">₹<b>{exp.amount}</b></td>
+         <td scope="row">{exp.notes}</td>
+         <td scope="row" style={{fontSize:'14px'}}>{moment(exp.expenseDate).format('DD-MMM-YYYY')}</td>
+         <td scope="row">
+         <button type="button" onClick={(e)=>deleteExpense(exp.expId)} class="btn btn-danger">Delete</button>
          </td>
         </tr>
         </tbody>)}
