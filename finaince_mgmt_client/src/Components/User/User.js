@@ -6,6 +6,7 @@ import './User.css';
 
 import UserNavbar from './UserNavbar/UserNavbar';
 import Dashboard from './Dashboard/Dashboard';
+import EditExpenses from './EditExpense/EditExpense';
 function User(){
     return(
       <div className='User'>
@@ -14,6 +15,7 @@ function User(){
 <Routes>
 <Route exact path='/view' element={<Dashboard />}/>
 <Route path='/add' element={<AddExpenses />}/>
+<Route path='/edit' element={<EditExpenses />}/>
 </Routes>
 </BrowserRouter>
 
