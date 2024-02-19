@@ -1,0 +1,20 @@
+.addexpense{
+    border-radius: 15px;
+    background: #ffffff;
+
+    width: 60vw;
+    margin: auto;
+    padding: 2%;
+    
+}
+.addexpense h1{
+    color: #298097;
+
+font-family: Arial, Helvetica, sans-serif;
+font-size: 22px;
+font-style: normal;
+font-weight: 600;
+line-height: normal;
+
+
+}
