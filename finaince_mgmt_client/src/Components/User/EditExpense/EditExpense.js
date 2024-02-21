@@ -14,7 +14,8 @@ function EditExpenses(){
       expenseType:0,
       amount:"",
       notes:"",
-      expenseDate:""
+      expenseDate:"",
+      category:""
     });  
 
     useEffect(() => {
@@ -40,7 +41,8 @@ function EditExpenses(){
     expenses:data.expenses,
     amount:data.amount,
     expenseDate:data.expenseDate,
-    notes:data.notes
+    notes:data.notes,
+    category:data.category
   })
   .then(console.log(data)).then(alert("Expenses Updated"))
   };
@@ -58,6 +60,10 @@ function EditExpenses(){
               <label htmlFor="Account">Account</label>
               <input onChange={(e)=> handle(e)} value={data.expId}  type="text" className="form-control" id="expId"  />
             </div>
+            <div className="form-group">
+            <label htmlFor="category">Category</label>
+            <input onChange={(e)=> handle(e)} value={data.category} type="text" className="form-control" id="category"  />
+          </div>
             <div className="form-group">
               <label htmlFor="expenseType">Expense Type</label>
               <input onChange={(e)=> handle(e)} value={data.expenseType} type="text" className="form-control" id="expenseType"  />

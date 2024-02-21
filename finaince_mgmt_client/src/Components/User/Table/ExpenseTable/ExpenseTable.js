@@ -41,6 +41,7 @@ function ExpenseTable() {
         <tr  >
             
             <th scope="col">Expense Name</th>
+            <th scope="col">Category</th>
             <th scope="col">Amount</th>
             <th scope="col">Notes</th>
             <th scope="col">Date</th>
@@ -51,6 +52,7 @@ function ExpenseTable() {
         <tr >
          
          <td  scope="row" ><Link  className="nav-link text-dark" to={''+exp.expId} >{exp.expenses}</Link></td>
+         <td scope="row">{exp.category}</td>
          <td scope="row">₹<b>{exp.amount}</b></td>
          <td scope="row">{exp.notes}</td>
          <td scope="row" style={{fontSize:'14px'}}>{moment(exp.expenseDate).format('DD-MMM-YYYY')}</td>
