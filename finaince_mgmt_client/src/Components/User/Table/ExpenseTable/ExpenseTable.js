@@ -50,7 +50,7 @@ function ExpenseTable() {
         {post.map((exp)=><tbody key={exp.expId} >
         <tr >
          
-         <td  scope="row" >{exp.expenses}</td>
+         <td  scope="row" ><Link  className="nav-link text-dark" to={''+exp.expId} >{exp.expenses}</Link></td>
          <td scope="row">₹<b>{exp.amount}</b></td>
          <td scope="row">{exp.notes}</td>
          <td scope="row" style={{fontSize:'14px'}}>{moment(exp.expenseDate).format('DD-MMM-YYYY')}</td>
