@@ -15,7 +15,7 @@ function User(){
 <Routes>
 <Route exact path='/view' element={<Dashboard />}/>
 <Route path='/add' element={<AddExpenses />}/>
-<Route path='/edit' element={<EditExpenses />}/>
+<Route path='/view/:id' element={<EditExpenses />}/>
 </Routes>
 </BrowserRouter>
 

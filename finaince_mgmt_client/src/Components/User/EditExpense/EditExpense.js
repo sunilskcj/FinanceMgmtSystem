@@ -2,10 +2,12 @@ import { useState, useEffect } from "react";
 import "./EditExpense.css"
 import Axios from "axios";
 import moment from 'moment';
+import { useParams } from 'react-router-dom';
 function EditExpenses(){
     
     let date=new Date();
     const url ="http://localhost:5244/api/Expenditure";
+    const { id } = useParams();
     const [data, setData]=useState({
       expenses:"",
       expId:"",
@@ -16,7 +18,7 @@ function EditExpenses(){
     });  
 
     useEffect(() => {
-      Axios.get(url+"/fetchById"+"/3173").then((response) => {
+      Axios.get(url+"/fetchById/"+id).then((response) => {
           
         setData(response.data);
        

@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import "./IncomeTable.css"
 import moment from 'moment';
-
+import { Link } from 'react-router-dom';
 function IncomeTable() {
   let nbsp = "\u00A0"
     const baseURL="http://localhost:5244/api/Expenditure/income"
@@ -12,19 +12,15 @@ function IncomeTable() {
         axios.get(baseURL).then((response) => {
             
           setPost(response.data);
-          console.log(post)
+         
         });
       }, []);
-      const [open, setOpen] = useState(false);
-
-      const handleOpen = () => {
-        setOpen(!open);
-      };
+      
       function deleteIncome(id){
 
         axios.delete("http://localhost:5244/api/Expenditure/"+id).then(console.log(id))
              .then(post.filter((p)=> p.expId !== id) ).then(setPost(post))
-             .then(console.log(id)).then(alert("Deleted Expenses"))
+             .then(alert("Deleted Expenses"))
              
       }
       if(post == null) return null;
@@ -43,15 +39,15 @@ function IncomeTable() {
             <th scope="col">Edit</th>
         </tr>
         </thead>
-        {post.map((exp)=><tbody>
-        <tr key={exp.expId}>
+        {post.map((exp)=><tbody key={exp.expId}>
+        <tr >
           
-        <td scope="row">{exp.expenses}</td>
+        <td scope="row"><Link  className="nav-link text-dark" to={''+exp.expId} >{exp.expenses}</Link></td> 
         <td scope="row">₹<b>{exp.amount}</b></td>
         <td scope="row">{exp.notes}</td>
         <td scope="row" style={{fontSize:'14px'}}>{moment(exp.expenseDate).format('DD-MMM-YYYY')}</td>
          <td scope="row">
-         <button type="button" onClick={(e)=>deleteIncome(exp.expId)} class="btn btn-danger">Delete</button></td>
+         <button type="button" onClick={(e)=>deleteIncome(exp.expId)} className="btn btn-danger">Delete</button></td>
          <td>
      </td>
         </tr>
