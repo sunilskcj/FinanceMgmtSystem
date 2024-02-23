@@ -21,7 +21,7 @@ namespace finance_mgmt_WebAPI.Controllers
             {
                 List<Expenditure> allExpenditures = acc.GetAllExpenses();
                 if (allExpenditures.Count > 0) return Ok(allExpenditures);
-                return NotFound();
+                return Ok();
             }
             catch (Exception ex)
             {
@@ -35,8 +35,13 @@ namespace finance_mgmt_WebAPI.Controllers
             try
             {
                 List<Expenditure> allExpenditures = acc.GetAllIncome();
-                if (allExpenditures.Count > 0) return Ok(allExpenditures);
-                return NotFound();
+
+                if (allExpenditures.Count > 0)
+                {
+                    
+                    return Ok(allExpenditures);
+                }
+                return Ok();
             }
             catch (Exception ex)
             {
