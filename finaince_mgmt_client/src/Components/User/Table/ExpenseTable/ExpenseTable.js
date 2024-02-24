@@ -1,5 +1,5 @@
 import Table from 'react-bootstrap/Table';
-import { useState, useEffect } from "react";
+import { useState, useEffect, useReducer } from "react";
 import moment from 'moment';
 import axios from "axios";
 import "./ExpenseTable.css"
@@ -7,29 +7,31 @@ import { Link } from 'react-router-dom';
 function ExpenseTable() {
   let nbsp = "\u00A0"
     const baseURL="http://localhost:5244/api/Expenditure"
+    const [reducer, forceUpdate]=useReducer(x=>x+1,0);
     const [post, setPost] = useState(null);
+    const [open, setOpen] = useState(false);
+
     useEffect(() => {
         axios.get(baseURL).then((response) => {
             
           setPost(response.data);
           
         });
-      }, []);
-      const [open, setOpen] = useState(false);
-
+      }, [reducer]);
+      
       const handleOpen = () => {
         setOpen(!open);
       };
   
      
-    function deleteExpense(id){
+    async function deleteExpense(id){
 
-      axios.delete(baseURL+"/"+id).then(console.log(id))
-           .then(post.filter((p)=> p.expId !== id) ).then(setPost(post))
-           .then(alert("Deleted Expenses"))
-           
+      await axios.delete(baseURL+"/"+id).then(console.log(id))
+          
+          
+           forceUpdate()    
     }
-      if(post == null) return null;
+      if(post === null) return null;
   return (
     <div className='expenseTable'>
 
@@ -48,7 +50,7 @@ function ExpenseTable() {
             <th scope="col">Edit</th>
         </tr>
         </thead>
-        {post.map((exp)=><tbody key={exp.expId} >
+        {Object.keys(post).length>0 && post.map((exp)=><tbody key={exp.expId} >
         <tr >
          
          <td  scope="row" ><Link  className="nav-link text-dark" to={''+exp.expId} >{exp.expenses}</Link></td>
