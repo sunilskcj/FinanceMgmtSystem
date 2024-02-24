@@ -1,5 +1,5 @@
 
-import { useState, useEffect } from "react";
+import { useState, useEffect ,useReducer} from "react";
 import axios from "axios";
 import "./IncomeTable.css"
 import moment from 'moment';
@@ -8,20 +8,21 @@ function IncomeTable() {
   let nbsp = "\u00A0"
     const baseURL="http://localhost:5244/api/Expenditure/income"
     const [post, setPost] = useState(null);
+    const [reducer, forceUpdate]=useReducer(x=>x+1,0);
     useEffect(() => {
         axios.get(baseURL).then((response) => {
-            
+            console.log(response)
           setPost(response.data);
          
         });
-      }, []);
+      }, [reducer]);
       
-      function deleteIncome(id){
+      async function deleteIncome(id){
 
-        axios.delete("http://localhost:5244/api/Expenditure/"+id).then(console.log(id))
-             .then(post.filter((p)=> p.expId !== id) ).then(setPost(post))
-             .then(alert("Deleted Expenses"))
+       await axios.delete("http://localhost:5244/api/Expenditure/"+id).then(console.log(id))
+            
              
+             forceUpdate()     
       }
       if(post == null) return null;
   return (
@@ -40,7 +41,7 @@ function IncomeTable() {
             <th scope="col">Edit</th>
         </tr>
         </thead>
-        {post.map((exp)=><tbody key={exp.expId}>
+        {Object.keys(post).length>0 && post.map((exp)=><tbody key={exp.expId}>
         <tr >
           
         <td scope="row"><Link  className="nav-link text-dark" to={''+exp.expId} >{exp.expenses}</Link></td> 
