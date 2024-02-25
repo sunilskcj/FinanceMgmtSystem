@@ -15,23 +15,24 @@ function EditExpenses(){
       amount:"",
       notes:"",
       expenseDate:"",
-      category:""
+      category:"",
+      accountsId:""
     });  
 
     useEffect(() => {
       Axios.get(url+"/fetchById/"+id).then((response) => {
           
         setData(response.data);
-       
+        console.log(response.data);
       });
     }, []);
    
 
     function handle(e){
-  const newDate ={...data};
-  newDate[e.target.id]=e.target.value
-  setData(newDate);    
-  
+  const newData ={...data};
+  newData[e.target.id]=e.target.value
+  setData(newData);    
+  console.log(newData);
   }
   function Submit(e){
   e.preventDefault();
@@ -42,13 +43,14 @@ function EditExpenses(){
     amount:data.amount,
     expenseDate:data.expenseDate,
     notes:data.notes,
-    category:data.category
+    category:data.category,
+    accountsID:data.accountsId
   })
   .then(console.log(data)).then(alert("Expenses Updated"))
   };
       return(
           <div className="addexpense">
-          <h5 >Add New</h5>
+          <h5 >Update Expenditure</h5>
           <div className="formAdd">
           <form onSubmit={(e)=>Submit(e)}>
           <div className="form-row">
@@ -57,8 +59,8 @@ function EditExpenses(){
               <input  value={data.expenses} onChange={(e)=> handle(e)}  type="text" className="form-control" id="expenses"  />
             </div>
             <div className="form-group">
-              <label htmlFor="Account">Account</label>
-              <input onChange={(e)=> handle(e)} value={data.expId}  type="text" className="form-control" id="expId"  />
+              <label htmlFor="accountsId">Account</label>
+              <input  value={data.accountsId} onChange={(e)=> handle(e)} type="number" className="form-control" id="accountsId"  />
             </div>
             <div className="form-group">
             <label htmlFor="category">Category</label>
