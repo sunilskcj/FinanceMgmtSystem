@@ -4,31 +4,40 @@ import Axios from "axios";
 function AddExpenses(){
     
     let date=new Date();
-    const url ="http://localhost:5244/api/Expenditure";
+    const url ="http://localhost:5244/api/Expenditure/";
     const [data, setData]=useState({
       expenses:"",
-      expenseType:"",
+      expId:"",
+      expenseType:0,
       amount:"",
       notes:"",
-      expenseDate:""
+      expenseDate:"",
+      category:"",
+      accountsId:""
     });  
 
     function handle(e){
   const newDate ={...data};
   newDate[e.target.id]=e.target.value
   setData(newDate);
-  console.log(data);
+  console.log(newDate);
   }
   function Submit(e){
+    console.log(data);
   e.preventDefault();
+  console.log(data);
   Axios.post(url,{
     expenseType: data.expenseType,
     expenses:data.expenses,
     amount:data.amount,
     expenseDate:data.expenseDate,
-    notes:data.notes
+    notes:data.notes,
+    category:data.category,
+    accountsId:data.accountsId
   })
-  .then(console.log(data)).then(alert("Added Expenses"))
+  .catch(function (error) {
+    console.log(error);
+  });
   };
       return(
           <div className="addexpense">
@@ -38,15 +47,20 @@ function AddExpenses(){
           <div className="form-row">
             <div className="form-group">
               <label htmlFor="expenses">Name</label>
-              <input onChange={(e)=> handle(e)} value={data.expenses} type="text" className="form-control" id="expenses"  />
+              <input onChange={(e)=> handle(e)} value={data.expenses}  type="text" className="form-control" id="expenses"  />
             </div>
             <div className="form-group">
-              <label htmlFor="Account">Account</label>
-              <input onChange={(e)=> handle(e)} value={data.accountId} type="text" className="form-control" id="accountsId"  />
+              <label htmlFor="accountsId">Account</label>
+              <input  value={data.accountsId} onChange={(e)=> handle(e)} type="number" className="form-control" id="accountsId"  />
             </div>
             <div className="form-group">
             <label htmlFor="category">Category</label>
-            <input onChange={(e)=> handle(e)} value={data.category} type="text" className="form-control" id="category"  />
+            <input onChange={(e)=> handle(e)} value={data.category}   type="text" className="form-control" id="category"  />
+          </div>
+          
+          <div className="form-group">
+            <label htmlFor="amount">Amount</label>
+            <input onChange={(e)=> handle(e)}  value = {data.amount}  type="number" className="form-control" id="amount"  />
           </div>
           <div className="form-group">
             <label htmlFor="expenseType">Expense Type</label>
@@ -58,7 +72,7 @@ function AddExpenses(){
           </div>
           <div className="form-group">
             <label htmlFor="Notes">Notes</label>
-            <input onChange={(e)=> handle(e)} value={data.notes} type="text" className="form-control" id="notes"  />
+            <input onChange={(e)=> handle(e)}  value={data.notes}  type="text" className="form-control" id="notes"  />
           </div>
           <div className="form-group">
             <label htmlFor="Date">Date</label>
