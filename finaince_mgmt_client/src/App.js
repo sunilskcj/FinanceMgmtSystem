@@ -12,11 +12,15 @@ import User from './Components/User/User';
 function App() {
   let nbsp = "\u00A0"
   return (
-  <div className='App'>
-  <User />
+    <div className='App'>
+    <BrowserRouter>
+      <Routes>
+        <Route exact path='/' element={ <LoginUser />} />
+        <Route exact path='user/*' element={ <User />} />
+      </Routes>
+    </BrowserRouter>
+    </div>
 
-  </div>
-    
   );
 }
 
