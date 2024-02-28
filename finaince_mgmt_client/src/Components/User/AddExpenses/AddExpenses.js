@@ -1,13 +1,14 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./AddExpenses.css"
 import Axios from "axios";
 function AddExpenses(){
     
     let date=new Date();
+    const [options, setOptions] = useState([]);
     const url ="http://localhost:5244/api/Expenditure/";
     const [data, setData]=useState({
       expenses:"",
-      expId:"",
+ 
       expenseType:0,
       amount:"",
       notes:"",
@@ -15,7 +16,27 @@ function AddExpenses(){
       category:"",
       accountsId:""
     });  
+    const authToken = localStorage.getItem('authToken');
+    const headers = {
+      
+      'Authorization': `Bearer ${authToken}`,
+    };
+    useEffect(() => {
+      const fetchData = async () => {
+        try {
+          const response = await Axios.get('http://localhost:5244/api/Accounts/',{headers});
+          setOptions(response.data); 
+          console.log(response.data);
+        } catch (error) {
+          console.error('Error fetching data:', error);
+        }
+      };
+  
+      fetchData();
+    }, []);
 
+
+    
     function handle(e){
   const newDate ={...data};
   newDate[e.target.id]=e.target.value
@@ -23,9 +44,9 @@ function AddExpenses(){
   console.log(newDate);
   }
   function Submit(e){
-    console.log(data);
+   
   e.preventDefault();
-  console.log(data);
+ console.log(data);
   Axios.post(url,{
     expenseType: data.expenseType,
     expenses:data.expenses,
@@ -34,7 +55,8 @@ function AddExpenses(){
     notes:data.notes,
     category:data.category,
     accountsId:data.accountsId
-  })
+  },{headers})
+  .then((res)=> console.log(res))
   .catch(function (error) {
     console.log(error);
   });
@@ -51,7 +73,12 @@ function AddExpenses(){
             </div>
             <div className="form-group">
               <label htmlFor="accountsId">Account</label>
-              <input  value={data.accountsId} onChange={(e)=> handle(e)} type="number" className="form-control" id="accountsId"  />
+              <select className="form-control" id="accountsId" value={data.accountsId} onChange={(e)=> handle(e)}>
+        <option value="">Select...</option>
+        {options.map((option) => (
+          <option key={option.accountsId} value={option.accountsId}>{option.accountName}</option>
+        ))}
+      </select>
             </div>
             <div className="form-group">
             <label htmlFor="category">Category</label>
@@ -65,9 +92,10 @@ function AddExpenses(){
           <div className="form-group">
             <label htmlFor="expenseType">Expense Type</label>
             <select onChange={(e) => handle(e)} id="expenseType" className="form-control">
-            <option value="0">Income</option>
+            <option value="">Select </option>
+            <option value="2">Income</option>
             <option value="1" >Expense</option>
-            <option defaultValue="">Null</option>
+            
             </select>
           </div>
           <div className="form-group">
