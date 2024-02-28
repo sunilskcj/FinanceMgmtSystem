@@ -7,6 +7,7 @@ function EditExpenses(){
     
     let date=new Date();
     const url ="http://localhost:5244/api/Expenditure";
+    const [options, setOptions] = useState([]);
     const { id } = useParams();
     const [data, setData]=useState({
       expenses:"",
@@ -18,13 +19,28 @@ function EditExpenses(){
       category:"",
       accountsId:""
     });  
-
+    const authToken = localStorage.getItem('authToken');
+    const headers = {
+      
+      'Authorization': `Bearer ${authToken}`,
+    };
     useEffect(() => {
-      Axios.get(url+"/fetchById/"+id).then((response) => {
+      Axios.get(url+"/fetchById/"+id,{headers}).then((response) => {
           
         setData(response.data);
         console.log(response.data);
-      });
+      }).catch(err=>console.log(err));
+      const fetchData = async () => {
+        try {
+          const response = await Axios.get('http://localhost:5244/api/Accounts/');
+          setOptions(response.data); 
+          console.log(response.data);
+        } catch (error) {
+          console.error('Error fetching data:', error);
+        }
+      };
+  
+      fetchData();
     }, []);
    
 
@@ -45,8 +61,9 @@ function EditExpenses(){
     notes:data.notes,
     category:data.category,
     accountsID:data.accountsId
-  })
+  },{headers})
   .then(console.log(data)).then(alert("Expenses Updated"))
+  .catch(err=>console.log(err))
   };
       return(
           <div className="addexpense">
@@ -56,32 +73,40 @@ function EditExpenses(){
           <div className="form-row">
             <div className="form-group">
               <label htmlFor="expenses">Name</label>
-              <input  value={data.expenses} onChange={(e)=> handle(e)}  type="text" className="form-control" id="expenses"  />
+              <input  value={data.expenses || ""} onChange={(e)=> handle(e)}  type="text" className="form-control" id="expenses"  />
             </div>
             <div className="form-group">
-              <label htmlFor="accountsId">Account</label>
-              <input  value={data.accountsId} onChange={(e)=> handle(e)} type="number" className="form-control" id="accountsId"  />
-            </div>
-            <div className="form-group">
-            <label htmlFor="category">Category</label>
-            <input onChange={(e)=> handle(e)} value={data.category} type="text" className="form-control" id="category"  />
+            <label htmlFor="accountsId">Account</label>
+            <select className="form-control" id="accountsId" value={data.accountsId || ""} onChange={(e)=> handle(e)}>
+      <option value="">Select</option>
+      {options.map((option) => (
+        <option key={option.accountsId} value={option.accountsId}>{option.accountName}</option>
+      ))}
+    </select>
           </div>
             <div className="form-group">
-              <label htmlFor="expenseType">Expense Type</label>
-              <input onChange={(e)=> handle(e)} value={data.expenseType} type="text" className="form-control" id="expenseType"  />
-            </div>
+            <label htmlFor="category">Category</label>
+            <input onChange={(e)=> handle(e)} value={data.category || ""} type="text" className="form-control" id="category"  />
+          </div>
+          <div className="form-group">
+          <label htmlFor="expenseType">Expense Type</label>
+          <select onChange={(e) => handle(e)} value={data.expenseType || ""} id="expenseType" className="form-control">
+          <option value="2">Income</option>
+          <option value="1" >Expense</option>
+          </select>
+        </div>
             <div className="form-group">
             <label htmlFor="amount">Amount</label>
-            <input value = {data.amount} onChange={(e)=> handle(e)}  type="number" className="form-control" id="amount"  />
+            <input value = {data.amount || ""} onChange={(e)=> handle(e)}  type="number" className="form-control" id="amount"  />
           </div>
           
           <div className="form-group">
             <label htmlFor="notes">Notes</label>
-            <input value={data.notes} onChange={(e)=> handle(e)} type="text" className="form-control" id="notes"  />
+            <input value={data.notes || ""} onChange={(e)=> handle(e)} type="text" className="form-control" id="notes"  />
           </div>
           <div className="form-group">
             <label htmlFor="expenseDate">Dates</label>
-            <input value={moment(data.expenseDate).format('YYYY-MM-DD')} onChange={(e)=> handle(e)}  type="date" className="form-control" id="expenseDate"  />
+            <input value={moment(data.expenseDate).format('YYYY-MM-DD') || ""} onChange={(e)=> handle(e)}  type="date" className="form-control" id="expenseDate"  />
           </div>
           </div>
           
