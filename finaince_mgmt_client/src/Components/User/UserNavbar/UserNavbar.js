@@ -1,10 +1,16 @@
 import { Link } from 'react-router-dom';
 import './UserNavbar.css';
 
-
+import { useNavigate } from 'react-router-dom';
 
 function UserNavbar(){
   let nbsp = "\u00A0"
+  const navigate = useNavigate();
+  const handleLogout = () => {
+    
+    localStorage.removeItem('authToken');  
+    navigate('/');
+  };
     return(
       
       <div className="d-flex flex-column flex-shrink-0 p-3 text-white " style={{height:'100vh',width:'300px',position:'-webkit-sticky',position:'sticky',top:'0',backgroundColor:'#fff'}}>
@@ -15,19 +21,19 @@ function UserNavbar(){
       <hr />
       <ul className="nav nav-pills flex-column mb-auto">
         <li className="nav-item">
-         <Link to='/'  className="nav-link text-dark" aria-current="page">
+         <Link to='home'  className="nav-link text-dark" aria-current="page">
          
             Home
           </Link>
         </li>
         <li>
-          <Link to='/view' className="nav-link text-dark">
+          <Link to='view' className="nav-link text-dark">
           
             Dashboard
           </Link>
         </li>
         <li>
-        <Link to='/add' className="nav-link text-dark">
+        <Link to='add' className="nav-link text-dark">
           
           Add Expense
         </Link>
@@ -45,7 +51,7 @@ function UserNavbar(){
         <li><a className="dropdown-item" href="#">Settings</a></li>
         <li><a className="dropdown-item" href="#">Profile</a></li>
         <li><hr className="dropdown-divider" /></li>
-        <li><a className="dropdown-item" href="#">Sign out</a></li>
+        <li><a className="dropdown-item"  onClick={handleLogout}>Sign out</a></li>
       </ul>
     </div>
     </div>
