@@ -7,17 +7,21 @@ import './User.css';
 import UserNavbar from './UserNavbar/UserNavbar';
 import Dashboard from './Dashboard/Dashboard';
 import EditExpenses from './EditExpense/EditExpense';
+import PieChart from './Charts/PieChart';
+import UserHome from './UserHome/UserHome';
+
 function User(){
     return(
       <div className='User'>
-      <BrowserRouter>
+  
 <UserNavbar />
 <Routes>
-<Route exact path='/view' element={<Dashboard />}/>
+<Route path='/home' element={<UserHome />}/>
+<Route path='/view' element={<Dashboard />}/>
 <Route path='/add' element={<AddExpenses />}/>
 <Route path='/view/:id' element={<EditExpenses />}/>
 </Routes>
-</BrowserRouter>
+
 
       
   </div>
