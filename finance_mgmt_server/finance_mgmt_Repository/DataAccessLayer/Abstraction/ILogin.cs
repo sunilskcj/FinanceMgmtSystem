@@ -11,5 +11,6 @@ namespace finance_mgmt_Repository.DataAccessLayer.Abstraction
     {
         public int isUserExist(User i);
         public int updatePassword();
+        public bool AuthenticateUser(UserInfo userInfo);
     }
 }
