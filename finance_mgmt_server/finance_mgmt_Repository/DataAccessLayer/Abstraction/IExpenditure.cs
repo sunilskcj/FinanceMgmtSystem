@@ -11,6 +11,8 @@ namespace finance_mgmt_Repository.DataAccessLayer.Abstraction
     {
         public List<Expenditure> GetAllExpenses();
         public List<Expenditure> GetAllIncome();
+        public List<IncomeTable> GetAllIncomeTablebyCategory(int id);
+        public List<ExpenseTable> GetAllExpenseTablebyCategory(int id);
         public Expenditure FetchbyId(int id);
         public int AddExpenses(Expenditure exp);
         public int UpdateExpenses(Expenditure exp);
