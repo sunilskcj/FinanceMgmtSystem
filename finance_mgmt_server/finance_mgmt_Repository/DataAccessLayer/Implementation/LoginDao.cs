@@ -18,9 +18,13 @@ namespace finance_mgmt_Repository.DataAccessLayer.Implementation
 
         public int isUserExist(User _login)
         {
-            return _db.Users.Where(l => l.UserId == _login.UserId).Count();
+            return _db.Users.Where(l => l.UserId == _login.UserId && l.UserPassword == _login.UserPassword).Count();
         }
-
+        public bool AuthenticateUser(UserInfo userInfo)
+        {
+            bool status = _db.Users.Any(user => user.UserId == userInfo.UserId && user.UserPassword == userInfo.Password);
+            return status;
+        }
         public int updatePassword()
         {
             throw new NotImplementedException();
