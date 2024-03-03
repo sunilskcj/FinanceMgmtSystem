@@ -1,5 +1,6 @@
 ﻿using finance_mgmt_Repository.DataAccessLayer.Abstraction;
 using finance_mgmt_Repository.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,7 +16,9 @@ namespace finance_mgmt_Repository.DataAccessLayer.Implementation
         {
             this._db = _db;
         }
+                
         public int AddExpenses(Expenditure exp)
+
         {
             _db.Expenditures.Add(exp);
             return _db.SaveChanges();
@@ -46,7 +49,15 @@ namespace finance_mgmt_Repository.DataAccessLayer.Implementation
         }
         public List<Expenditure> GetAllIncome()
         {
-            return _db.Expenditures.Where(e => e.ExpenseType == 0).ToList<Expenditure>();
+            return _db.Expenditures.Where(e => e.ExpenseType == 2).ToList<Expenditure>();
+        }
+        public List<IncomeTable> GetAllIncomeTablebyCategory(int id)
+        {
+            return _db.IncomeTables.FromSqlRaw($"GetIncomeDatabyUserId  {id}").ToList<IncomeTable>();
+        }
+        public List<ExpenseTable> GetAllExpenseTablebyCategory(int id)
+        {
+            return _db.ExpenseTables.FromSqlRaw($"GetExpenseDatabyUserId  {id}").ToList<ExpenseTable>();
         }
         public int UpdateExpenses(Expenditure exp)
         {
