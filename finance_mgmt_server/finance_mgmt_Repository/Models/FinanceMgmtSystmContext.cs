@@ -19,6 +19,12 @@ public partial class FinanceMgmtSystmContext : DbContext
 
     public virtual DbSet<Expenditure> Expenditures { get; set; }
 
+    public virtual DbSet<ExpenseTable> ExpenseTables { get; set; }
+
+    public virtual DbSet<IncomeTable> IncomeTables { get; set; }
+
+    public virtual DbSet<IncomeTablebyId> IncomeTablebyIds { get; set; }
+
     public virtual DbSet<User> Users { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -66,6 +72,46 @@ public partial class FinanceMgmtSystmContext : DbContext
             entity.HasOne(d => d.Accounts).WithMany(p => p.Expenditures)
                 .HasForeignKey(d => d.AccountsId)
                 .HasConstraintName("FK__Expenditu__Accou__46E78A0C");
+
+            entity.HasOne(d => d.User).WithMany(p => p.Expenditures)
+                .HasForeignKey(d => d.UserId)
+                .HasConstraintName("FK_Expenditure_Users");
+        });
+
+        modelBuilder.Entity<ExpenseTable>(entity =>
+        {
+            entity
+                .HasNoKey()
+                .ToView("ExpenseTable");
+
+            entity.Property(e => e.Category)
+                .HasMaxLength(80)
+                .IsUnicode(false);
+            entity.Property(e => e.NetAmount)
+                .HasColumnType("decimal(38, 2)")
+                .HasColumnName("netAmount");
+        });
+
+        modelBuilder.Entity<IncomeTable>(entity =>
+        {
+            entity
+                .HasNoKey()
+                .ToView("IncomeTable");
+
+            entity.Property(e => e.Category)
+                .HasMaxLength(80)
+                .IsUnicode(false);
+            entity.Property(e => e.NetAmount)
+                .HasColumnType("decimal(38, 2)")
+                .HasColumnName("netAmount");
+        });
+
+        modelBuilder.Entity<IncomeTablebyId>(entity =>
+        {
+            entity
+                .HasNoKey()
+                .ToView("IncomeTablebyId");
+
         });
 
         modelBuilder.Entity<User>(entity =>
@@ -74,18 +120,14 @@ public partial class FinanceMgmtSystmContext : DbContext
 
             entity.Property(e => e.UserId).ValueGeneratedNever();
             entity.Property(e => e.AccountsId).HasColumnName("AccountsID");
-            entity.Property(e => e.Id).HasColumnName("ID");
             entity.Property(e => e.UserPassword)
                 .HasMaxLength(13)
                 .IsUnicode(false);
-
-            entity.HasOne(d => d.Accounts).WithMany(p => p.Users)
-                .HasForeignKey(d => d.AccountsId)
-                .HasConstraintName("FK__Users__AccountsI__47DBAE45");
         });
 
         OnModelCreatingPartial(modelBuilder);
     }
 
     partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
+ 
 }
