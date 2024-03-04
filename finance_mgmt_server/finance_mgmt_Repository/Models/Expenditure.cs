@@ -23,5 +23,9 @@ public partial class Expenditure
 
     public string? Category { get; set; }
 
+    public int? UserId { get; set; }
+
     public virtual Account? Accounts { get; set; }
+
+    public virtual User? User { get; set; }
 }
