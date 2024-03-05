@@ -14,6 +14,4 @@ public partial class Account
     public int AccountsId { get; set; }
 
     public virtual ICollection<Expenditure> Expenditures { get; set; } = new List<Expenditure>();
-
-    public virtual ICollection<User> Users { get; set; } = new List<User>();
 }
