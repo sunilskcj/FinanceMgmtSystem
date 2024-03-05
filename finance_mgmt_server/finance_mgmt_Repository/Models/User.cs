@@ -9,9 +9,7 @@ public partial class User
 
     public string? UserPassword { get; set; }
 
-    public int? Id { get; set; }
-
     public int? AccountsId { get; set; }
 
-    public virtual Account? Accounts { get; set; }
+    public virtual ICollection<Expenditure> Expenditures { get; set; } = new List<Expenditure>();
 }
