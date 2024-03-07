@@ -1,0 +1,31 @@
+.ChartContainer {
+
+    display: flex;
+    justify-content: center;
+    /* Center horizontally */
+    align-items: center;
+    /* Center vertically */
+    height: 40vh;
+    /* Adjust as needed */
+    margin: auto;
+
+
+}
+
+.expenseChart {
+    border-radius: 15px;
+    background: #ffffff;
+
+    width: 20vw;
+    margin: 2%;
+    padding: 2%;
+}
+
+.incomeChart {
+    border-radius: 15px;
+    background: #ffffff;
+
+    width: 20vw;
+    margin: 2%;
+    padding: 2%;
+}
