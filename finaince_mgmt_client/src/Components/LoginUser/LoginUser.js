@@ -2,15 +2,17 @@ import './LoginUser.css';
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import {  toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function LoginUser() {
 
-
+    
     const [formData, setFormData] = useState({
         userId: '',
         userPassword: ''
     });
-    const [error, setError] = useState('');
+   
     const navigate = useNavigate();
     const handleInputChange = (event) => {
         const { name, value } = event.target;
@@ -20,22 +22,26 @@ function LoginUser() {
         });
     };
 
-    const handleSubmit = async (event) => {
+    const handleSubmit =  (event) => {
         event.preventDefault();
-        try {
+        
+     
             console.log(formData); 
-            const response = await axios.post('http://localhost:5244/api/Login', formData);
-            console.log('Login successful!', response.data);
-            localStorage.setItem('authToken', response.data.token);
-           
-           // axios.defaults.headers.common['Authorization'] = `Bearer ${authToken}`;
-            
-            navigate('user/view');
-        } catch (error) {
-            console.error('Login error:', error);
-            setError('Invalid username or password. Please try again.'); // You can customize this message based on your API response
+            toast.promise(axios.post('http://localhost:5244/api/Login', formData)
+            .then((response)=>
+            {
+                console.log('Login successful!', response.data)
+                localStorage.setItem('authToken', response.data.token)
+                navigate('user/view')
+            })
+           ,
+            {
+                pending: 'Promise is pending',
+                success: 'Promise resolved 👌',
+                error: 'Promise rejected 🤯'
+            })
         }
-    };
+  
     return (
         <div className="container">
 
@@ -53,7 +59,7 @@ function LoginUser() {
                 </div>
                 <button className="btn btn-primary" type="submit" >Login</button><br /><br />
             </form>
-
+           
             <div>
                 <a ><h5>First Time User ? Register</h5><br /></a>
                 <a ><h5>Forget User ID</h5><br /></a>
